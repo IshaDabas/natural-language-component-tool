@@ -32,7 +32,15 @@ A React-based tool for browsing, searching, and previewing UI components with li
    npm run dev
    ```
 3. **Browse and search:**
-   - Use the search input to filter components by name or keyword.
+
+   - Use the search input to filter components by name or keyword (It does not have all components but soon it will have more components and their codeSnippets).'
+
+   - **List of components that can be searched are:-**
+   - Radio
+   - Radio Button
+   - Form
+   - Checkbox, checkbox
+
    - Click a suggestion or press the search button to update the results.
    - Click the theme toggle (🌙/☀️) in the top right to switch themes.
    - Click "Copy Source Code" to copy a component's code snippet to your clipboard.

@@ -27,14 +27,8 @@ const ComponentCard = ({ component }) => {
     <>
       <ContentCard borderBlockEnd className="component-card">
         <Utility element={<ContentCardBody />} vFlex vFlexCol vGap={10}>
-          <ContentCardTitle className="component-title" variant="headline-4">
-            {component.name ? (
-              <Utility vFlex vGap={8}>
-                {component.name}
-              </Utility>
-            ) : (
-              <span style={{ color: "red" }}>Missing name</span>
-            )}
+          <ContentCardTitle className="content-card-title" variant="headline-4">
+            Code Snippet
           </ContentCardTitle>
         </Utility>
         <Accordion>
@@ -44,7 +38,7 @@ const ComponentCard = ({ component }) => {
             className="accordion-heading"
           >
             <AccordionToggleIcon />
-            Source Code
+            Show Code
           </AccordionHeading>
           <AccordionPanel>
             <pre>
@@ -62,7 +56,7 @@ const ComponentCard = ({ component }) => {
             onClick={copyToClipboard}
             className="copy-btn"
           >
-            Copy Source Code
+            Copy Code
             <VisaCopyHigh aria-label="Copy icon" className="icon-after" />
           </Button>
         </Utility>

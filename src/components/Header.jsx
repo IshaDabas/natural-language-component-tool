@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import "../styles/theme.css";
+import SearchModal from "../modals/searchModal";
+import { useNavigate } from "react-router-dom";
 
 function PageHeader({ title, subtitle }) {
   const [theme, setTheme] = useState(() => {
     return document.body.classList.contains("theme-dark") ? "dark" : "light";
   });
+  const [showSearch, setShowSearch] = useState(false);
+  const nav = useNavigate();
 
   const toggleTheme = () => {
     if (theme === "light") {
@@ -19,19 +23,34 @@ function PageHeader({ title, subtitle }) {
   };
 
   return (
-    <div className="header" style={{ position: "relative" }}>
-      <div className="header-content">
-        <span className="header-title">{title}</span>
-        <div className="subtitle">{subtitle}</div>
-      </div>
-      <button
-        onClick={toggleTheme}
-        className="toggle-theme"
-        aria-label="Toggle theme"
+    <>
+      {" "}
+      <SearchModal visible={showSearch} onClose={() => setShowSearch(false)} />
+      <div
+        className="header"
+        style={{ position: "sticky", top: 0, zIndex: 100, background: "white" }}
       >
-        {theme === "light" ? "🌙" : "☀️"}
-      </button>
-    </div>
+        <div onClick={() => nav("/")} style={{ cursor: "pointer" }}>
+          <span className="header-title">{title}</span>
+          <div className="subtitle">{subtitle}</div>
+        </div>
+        <button
+          onClick={toggleTheme}
+          className="toggle-theme"
+          aria-label="Toggle theme"
+        >
+          {theme === "light" ? "🌙" : "☀️"}
+        </button>
+        <button
+          onClick={() => setShowSearch(true)}
+          className="search-icon"
+          aria-label="Search components"
+          title="Search components"
+        >
+          🔍
+        </button>
+      </div>
+    </>
   );
 }
 

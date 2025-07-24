@@ -1,5 +1,6 @@
 export const componentUI = [
   {
+    sno: 1,
     id: "checkbox-001",
     name: "CheckBox with Label",
     description:
@@ -38,6 +39,7 @@ export const DefaultCheckbox = () => {
     framework: "React",
   },
   {
+    sno: 2,
     id: "checkbox-002",
     name: "CheckBox with Error",
     description:
@@ -120,6 +122,7 @@ export const ValidationCheckbox = () => {
     framework: "React",
   },
   {
+    sno: 3,
     id: "checkbox-003",
     name: "Disabled checkbox",
     description:
@@ -163,6 +166,7 @@ export const DisabledCheckedCheckbox = () => {
     framework: "React",
   },
   {
+    sno: 4,
     id: "login-form-001",
     name: "Login Form",
     description:
@@ -219,6 +223,7 @@ export default LoginForm;
     framework: "React",
   },
   {
+    sno: 5,
     id: "button-001",
     name: "Primary-Button",
     description:
@@ -238,6 +243,7 @@ export const DefaultButton = () => {
     framework: "React",
   },
   {
+    sno: 6,
     id: "button-002",
     name: "Secondary-Button",
     description:
@@ -257,6 +263,7 @@ export const SecondaryButton = () => {
     framework: "React",
   },
   {
+    sno: 7,
     id: "textinput-001",
     name: "Text Input",
     description:
@@ -286,6 +293,7 @@ export const DefaultInput = () => {
     framework: "React",
   },
   {
+    sno: 8,
     id: "textinput-002",
     name: "Text Input with error",
     description:
@@ -374,6 +382,7 @@ export const ErrorInput = () => {
     framework: "React",
   },
   {
+    sno: 9,
     id: "radio-001",
     name: "Radio Button with label",
     description:
@@ -410,6 +419,7 @@ export const DefaultRadio = () => {
     framework: "React",
   },
   {
+    sno: 10,
     id: "radio-002",
     name: "Radio Button with error",
     description:
@@ -489,6 +499,7 @@ export const ErrorRadio = () => {
     framework: "React",
   },
   {
+    sno: 11,
     id: "content-card-001",
     name: "Default Content Card",
     description:
@@ -549,6 +560,7 @@ export const DefaultContentCard = () => {
     framework: "React",
   },
   {
+    sno: 12,
     id: "content-card-002",
     name: "Content Card with image",
     description:
