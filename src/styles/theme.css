@@ -61,26 +61,30 @@ page-container {
 
 .header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid #eee;
+  flex-direction: row;
+  padding-top: 3rem;
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #000000;
   margin-bottom: 2rem;
   font-weight: bold;
   color: #004279;
   font-size: 3rem;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #dbe7f1;
+  height: 100px;
 }
 
 .header-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: left;
+  padding-top: 1rem;
 }
 
 .label {
@@ -323,7 +327,7 @@ ul.search-results {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  border: 2px solid var(--color-border);
+  border: 1px solid var(--color-border);
   background: var(--color-card);
   color: var(--color-accent);
   cursor: pointer;
@@ -333,6 +337,7 @@ ul.search-results {
   align-items: center;
   justify-content: center;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.308);
+  transition: all 0.2s ease-in-out;
 }
 
 .search-icon {
@@ -352,6 +357,17 @@ ul.search-results {
   align-items: center;
   justify-content: center;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.308);
+  transition: all 0.2s ease-in-out;
+}
+
+.search-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.toggle-theme:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 
 :root {
@@ -487,47 +503,61 @@ body,
 }
 
 /* ========== HERO SECTION ========== */
+/* HERO SECTION FIXED ALIGNMENT */
 .hero-section {
-  background: linear-gradient(to right, #f6f9ff, #ffffff);
-  padding: 2rem 1rem;
+  background: var(--color-bg);
   display: flex;
+  align-items: center;
   justify-content: center;
-}
-
-.hero {
-  max-width: 1200px;
+  min-height: 80vh;
   width: 100%;
+  padding: 0 24px;
 }
 
 .hero-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 48px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .hero-text {
-  max-width: 600px;
+  flex: 1;
+  max-width: 520px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-title {
   font-weight: bold;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-accentt);
+  text-align: left;
+  /* allow wrapping */
 }
 
 .hero-subtitle {
   color: #666;
   font-weight: bold;
   font-size: 1.2rem;
+  text-align: left;
+  margin-bottom: 1.2rem;
 }
 
 .hero-image {
-  width: 600px;
-  height: 400px;
-  border-radius: 12px;
-  margin-left: 40%;
+  flex: 1;
+  max-width: 520px;
+  min-width: 320px;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  display: block;
 }
 
 .hero-button {
@@ -535,6 +565,7 @@ body,
   align-items: center;
   gap: 8px;
   transition: all 0.2s ease-in-out;
+  width: 150px;
 }
 
 .hero-button:hover {
@@ -542,31 +573,71 @@ body,
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 
+@media (max-width: 1100px) {
+  .hero-content {
+    gap: 24px;
+  }
+  .hero-text,
+  .hero-image {
+    max-width: 420px;
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 32px;
+  }
+  .hero-text,
+  .hero-image {
+    max-width: 95vw;
+    min-width: 120px;
+  }
+  .hero-title,
+  .hero-subtitle {
+    text-align: center;
+  }
+}
+
 /* ========== WHY US SECTION ========== */
+
+.why-us-container {
+  background-color: var(--color-bg);
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: left;
+}
+
 .why-us-section {
-  background-color: #fff;
+  background-color: var(--color-bg);
   padding: 4rem 1rem;
   display: flex;
   justify-content: center;
 }
 
 .why-us {
-  max-width: 800px;
+  max-width: 100%;
   text-align: center;
+  margin-left: 10%;
 }
 
 .why-title {
   margin-bottom: 2rem;
   font-size: 3rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: var(--color-accentt);
+  text-align: left;
 }
 
 .why-description {
   color: #444;
   line-height: 1.5;
   font-size: 1.5rem;
-  max-width: 600px;
+  max-width: 50%;
   text-align: justify;
+  color: var(--color-text);
 }
 
 /* Responsive Fixes */

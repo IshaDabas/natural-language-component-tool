@@ -32,7 +32,7 @@ function PageHeader({ title, subtitle }) {
       >
         <div onClick={() => nav("/")} style={{ cursor: "pointer" }}>
           <span className="header-title">{title}</span>
-          <div className="subtitle">{subtitle}</div>
+          {/* <div className="subtitle">{subtitle}</div> */}
         </div>
         <button
           onClick={toggleTheme}
