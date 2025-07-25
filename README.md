@@ -98,4 +98,31 @@ For more details, see code comments referencing specific WCAG and VGAR criteria 
 
 ---
 
+## Approach and Technical Choices
+
+- **Framework:** Built with React for component-driven development and fast prototyping.
+- **Component Library:** Utilizes [@visa/nova-react](https://www.npmjs.com/package/@visa/nova-react) for accessible, Visa-compliant UI components.
+- **State Management:** Uses React hooks (`useState`, `useEffect`) for local state and UI logic.
+- **Styling:** Theming and responsive design are handled via CSS variables and custom classes in `theme.css`.
+- **Accessibility:** Follows WCAG and VGAR standards, using semantic HTML, ARIA attributes, and keyboard navigation support throughout.
+- **Code Organization:** Components are modularized for clarity and reusability. The `componentUI` object centralizes all component data and code snippets.
+
+## Assumptions and Shortcuts
+
+- Assumed that the Nova Design System components are accessible by default, so minimal custom ARIA was added unless needed.
+- The code preview feature only supports simple, self-contained functional components for security and simplicity.
+- Search suggestions and filtering are based on a static list (`componentUI`), not a backend or dynamic data source.
+- Some accessibility features (e.g., focus management in modals/dropdowns) are handled at a basic level and may need further refinement for edge cases.
+- The app is intended as a prototype/demo, not for production use.
+
+## Improvements and Future Work
+
+- **Expand Component Library:** Add more components and richer code snippets to the `componentUI` array.
+- **Dynamic Data:** Integrate with a backend or API for real-time component updates and search.
+- **Advanced Accessibility:** Improve keyboard navigation for dropdowns, accordions, and modals (e.g., arrow key support, focus trapping).
+- **Testing:** Add more automated accessibility and unit tests (e.g., with Jest, React Testing Library, axe-core).
+- **Customization:** Allow users to customize themes, save favorites, or export code snippets.
+- **Performance:** Optimize rendering for large component lists and improve lazy loading.
+- **Documentation:** Expand code comments and add more usage examples.
+
 © 2025 Visa Nova Component Suggester. Built with [@visa/nova-react](https://www.npmjs.com/package/@visa/nova-react).

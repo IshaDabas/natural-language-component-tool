@@ -108,15 +108,7 @@ export default function WhyUs() {
       </div>
 
       <div>
-        <section
-          className="why-us-contentCard-section"
-          role="region"
-          aria-labelledby="design-system-cards-heading"
-        >
-          <h2 id="design-system-cards-heading" className="sr-only">
-            Design system cards
-          </h2>
-
+        <section className="why-us-contentCard-section" role="region">
           <ContentCard
             className="why-us-contentCard"
             role="article"
