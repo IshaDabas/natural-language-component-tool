@@ -9,34 +9,68 @@ export default function LandingPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="landing-container">
-      <section className="hero-section">
-        <Utility vFlex vPadding={58} className="hero">
-          <Utility vFlex vFlexRow vGap={64} className="hero-content">
-            <Utility vFlex vFlexCol vGap={24} className="hero-text">
-              <Typography variant="headline-1" className="hero-title">
+    <main
+      className="landing-container"
+      role="main"
+      aria-label="Landing page content"
+    >
+      <section
+        className="hero-section"
+        aria-label="Hero section with intro and image"
+      >
+        <Utility vFlex vPadding={58} className="hero" aria-label="Hero wrapper">
+          <Utility
+            vFlex
+            vFlexRow
+            vGap={64}
+            className="hero-content"
+            aria-label="Hero text and image layout"
+          >
+            <Utility
+              vFlex
+              vFlexCol
+              vGap={24}
+              className="hero-text"
+              aria-label="Introductory text block"
+            >
+              <Typography
+                variant="headline-1"
+                className="hero-title"
+                aria-label="Landing page title"
+              >
                 Transform Natural Language to UI
               </Typography>
-              <Typography variant="body-lg" className="hero-subtitle">
+
+              <Typography
+                variant="body-lg"
+                className="hero-subtitle"
+                aria-label="Landing page subtitle"
+              >
                 Empower your design system with intelligent suggestions that
                 help developers ship faster with confidence and design
                 precision.
               </Typography>
+
               <Button
                 className="hero-button"
                 variant="primary"
                 onClick={() => navigate("/why-us")}
+                aria-label="Learn more about our design system features"
               >
                 Know More <VisaArrowEndHigh style={{ marginLeft: 20 }} />
               </Button>
             </Utility>
 
-            <Utility>
-              <img src={HeroImg} alt="Illustration" className="hero-image" />
+            <Utility aria-label="Hero image container">
+              <img
+                src={HeroImg}
+                alt="Illustration showing natural language transformed into a UI layout"
+                className="hero-image"
+              />
             </Utility>
           </Utility>
         </Utility>
       </section>
-    </div>
+    </main>
   );
 }

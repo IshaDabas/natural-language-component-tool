@@ -25,22 +25,32 @@ const ComponentCard = ({ component }) => {
 
   return (
     <>
-      <ContentCard borderBlockEnd className="component-card">
+      <ContentCard
+        borderBlockEnd
+        className="component-card"
+        aria-label={`Component card for ${component?.name || "component"}`}
+      >
         <Utility element={<ContentCardBody />} vFlex vFlexCol vGap={10}>
-          <ContentCardTitle className="content-card-title" variant="headline-4">
+          <ContentCardTitle
+            className="content-card-title"
+            variant="headline-4"
+            aria-label="Code snippet heading"
+          >
             Code Snippet
           </ContentCardTitle>
         </Utility>
-        <Accordion>
+
+        <Accordion aria-label="Expandable section to show code snippet">
           <AccordionHeading
             buttonSize="large"
             colorScheme="secondary"
             className="accordion-heading"
+            aria-expanded="false"
           >
-            <AccordionToggleIcon />
+            <AccordionToggleIcon aria-hidden="true" />
             Show Code
           </AccordionHeading>
-          <AccordionPanel>
+          <AccordionPanel aria-label="Code snippet panel">
             <pre>
               <code className="code-snippet">
                 {typeof component.codeSnippet === "string"
@@ -50,17 +60,20 @@ const ComponentCard = ({ component }) => {
             </pre>
           </AccordionPanel>
         </Accordion>
+
         <Utility vPaddingTop={12}>
           <Button
             colorScheme="secondary"
             onClick={copyToClipboard}
             className="copy-btn"
+            aria-label="Copy code to clipboard"
           >
             Copy Code
-            <VisaCopyHigh aria-label="Copy icon" className="icon-after" />
+            <VisaCopyHigh aria-hidden="true" className="icon-after" />
           </Button>
         </Utility>
       </ContentCard>
+
       <Toast
         message="Code has been copied successfully"
         visible={toastVisible}
@@ -72,5 +85,14 @@ const ComponentCard = ({ component }) => {
 export default ComponentCard;
 
 function Toast({ message, visible }) {
-  return visible ? <div className="toast">{message}</div> : null;
+  return visible ? (
+    <div
+      className="toast"
+      role="alert"
+      aria-live="assertive"
+      aria-label="Copy confirmation"
+    >
+      {message}
+    </div>
+  ) : null;
 }

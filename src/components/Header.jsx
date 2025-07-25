@@ -25,34 +25,45 @@ function PageHeader({ title, subtitle }) {
 
   return (
     <>
-      {" "}
       <SearchModal visible={showSearch} onClose={() => setShowSearch(false)} />
-      <div
+
+      <header
         className="header"
+        role="banner"
+        aria-label="Application Header"
         style={{ position: "sticky", top: 0, zIndex: 100, background: "white" }}
       >
-        <div onClick={() => nav("/")} style={{ cursor: "pointer" }}>
+        <div
+          onClick={() => nav("/")}
+          style={{ cursor: "pointer" }}
+          aria-label="Go to Home Page"
+          role="link"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === "Enter" && nav("/")}
+        >
           <Typography variant="headline-1" className="header-title">
             {title}
           </Typography>
         </div>
+
         <button
           onClick={toggleTheme}
           className="toggle-theme"
-          aria-label="Toggle theme"
+          aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+          title="Toggle light/dark theme"
         >
-          Theme
-          {theme === "light" ? "🌙" : "☀️"}
+          Theme {theme === "light" ? "🌙" : "☀️"}
         </button>
+
         <button
           onClick={() => setShowSearch(true)}
           className="search-icon"
-          aria-label="Search components"
+          aria-label="Open component search modal"
           title="Search components"
         >
           Search 🔍
         </button>
-      </div>
+      </header>
     </>
   );
 }

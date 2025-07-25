@@ -84,13 +84,13 @@ page-container {
   font-size: 0.95rem;
   font-weight: bold;
 }
-
+/* 
 .subtitle {
   color: #004279;
   font-size: 1rem;
   font-weight: bold;
   padding-top: 3%;
-}
+} */
 
 .footer {
   background-color: #f8f9fa;
@@ -303,20 +303,7 @@ ul.search-results {
 .content-card-title {
   font-weight: bold;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: var(--color-accentt) !important;
-}
-
-/* Code preview container */
-.code-preview {
-  background-color: #f5f5f5;
-  padding: 1rem;
-  border-radius: 12px;
-  overflow-x: auto;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  font-family: monospace;
-  white-space: pre;
+  color: #1e458b !important;
 }
 
 /* Copy button styling */
@@ -339,10 +326,6 @@ ul.search-results {
 @media (max-width: 480px) {
   .component-card h3 {
     font-size: 1.1rem;
-  }
-
-  .code-preview {
-    font-size: 0.8rem;
   }
 
   .copy-btn {
@@ -500,14 +483,12 @@ body,
   overflow-x: hidden;
 }
 
-/* ========== HERO SECTION ========== */
-/* HERO SECTION FIXED ALIGNMENT */
 .hero-section {
   background: var(--color-bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
+  min-height: 70vh;
   width: 100%;
   padding: 0 24px;
 }
@@ -598,8 +579,6 @@ body,
     text-align: center;
   }
 }
-
-/* ========== WHY US SECTION ========== */
 
 .why-us-container {
   background-color: var(--color-bg);

@@ -14,6 +14,7 @@
     "@visa/nova-react": "^2.5.4",
     "@visa/nova-styles": "^1.6.2",
     "copy-to-clipboard": "^3.3.3",
+    "downshift": "^9.0.10",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-live": "^4.1.8",

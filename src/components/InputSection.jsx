@@ -23,7 +23,7 @@ export default function InputSection({ input, setInput, onGenerate }) {
   );
 
   return (
-    <div className="input">
+    <div className="input" aria-label="Input section">
       <Utility vFlex vFlexCol vGap={4}>
         <Label className="label" htmlFor={input}>
           Find the UI you need
@@ -31,6 +31,7 @@ export default function InputSection({ input, setInput, onGenerate }) {
         <div
           className="input-container"
           style={{ position: "relative", width: "100%" }}
+          aria-label="Input container"
         >
           <InputContainer style={{ width: "100%" }}>
             <Input
@@ -47,10 +48,11 @@ export default function InputSection({ input, setInput, onGenerate }) {
               placeholder="Search for checkbox, button, radio..."
               onFocus={() => setShowDropdown(true)}
               onBlur={() => setTimeout(() => setShowDropdown(false), 150)}
+              aria-label="Search input"
             />
           </InputContainer>
           {showDropdown && search && (
-            <ul className="search-results">
+            <ul className="search-results" aria-label="Search results">
               {filtered.length === 0 && (
                 <li style={{ listStyle: "none", color: "#888", padding: 8 }}>
                   No results
@@ -71,6 +73,7 @@ export default function InputSection({ input, setInput, onGenerate }) {
                     setShowDropdown(false);
                     onGenerate();
                   }}
+                  aria-label={`Search result: ${c.name}`}
                 >
                   {c.name}
                 </li>
@@ -83,6 +86,7 @@ export default function InputSection({ input, setInput, onGenerate }) {
               onClick={onGenerate}
               variant="primary"
               colorScheme="primary"
+              aria-label="Search button"
             >
               Search
               <VisaSearchLow aria-label="Search icon" className="icon-after" />
