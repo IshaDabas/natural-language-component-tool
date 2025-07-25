@@ -14,11 +14,13 @@ export default function LandingPage() {
         <Utility vFlex vPadding={58} className="hero">
           <Utility vFlex vFlexRow vGap={64} className="hero-content">
             <Utility vFlex vFlexCol vGap={24} className="hero-text">
-              <Typography variant="display-lg" className="hero-title">
+              <Typography variant="headline-1" className="hero-title">
                 Transform Natural Language to UI
               </Typography>
               <Typography variant="body-lg" className="hero-subtitle">
-                Empower your design system with intelligent suggestions.
+                Empower your design system with intelligent suggestions that
+                help developers ship faster with confidence and design
+                precision.
               </Typography>
               <Button
                 className="hero-button"

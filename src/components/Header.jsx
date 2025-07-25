@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/theme.css";
 import SearchModal from "../modals/searchModal";
 import { useNavigate } from "react-router-dom";
+import { Typography } from "@visa/nova-react";
 
 function PageHeader({ title, subtitle }) {
   const [theme, setTheme] = useState(() => {
@@ -31,14 +32,16 @@ function PageHeader({ title, subtitle }) {
         style={{ position: "sticky", top: 0, zIndex: 100, background: "white" }}
       >
         <div onClick={() => nav("/")} style={{ cursor: "pointer" }}>
-          <span className="header-title">{title}</span>
-          {/* <div className="subtitle">{subtitle}</div> */}
+          <Typography variant="headline-1" className="header-title">
+            {title}
+          </Typography>
         </div>
         <button
           onClick={toggleTheme}
           className="toggle-theme"
           aria-label="Toggle theme"
         >
+          Theme
           {theme === "light" ? "🌙" : "☀️"}
         </button>
         <button
@@ -47,7 +50,7 @@ function PageHeader({ title, subtitle }) {
           aria-label="Search components"
           title="Search components"
         >
-          🔍
+          Search 🔍
         </button>
       </div>
     </>
@@ -55,10 +58,5 @@ function PageHeader({ title, subtitle }) {
 }
 
 export default function Header() {
-  return (
-    <PageHeader
-      title="Visa Nova Component Suggesting Tool"
-      subtitle="Quickly browse and copy Nova React components"
-    />
-  );
+  return <PageHeader title="Visa Nova Component Suggesting Tool" />;
 }

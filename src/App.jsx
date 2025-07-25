@@ -1,3 +1,4 @@
+import { Typography } from "@visa/nova-react";
 import ComponentCard from "./components/ComponentCard";
 import { componentUI } from "./objects";
 import "./styles/theme.css";
@@ -12,23 +13,35 @@ export default function App() {
   return (
     <div className="page-container">
       <div className="main-content">
-        <h1 className="component-title">{cmp.name}</h1>
+        <Typography variant="headline-1" className="component-title">
+          {cmp.name}
+        </Typography>
         <br />
-        <p className="component-description">{cmp.description}</p>
+        <Typography variant="body-lg" className="component-description">
+          {cmp.description}
+        </Typography>
         <br />
         <br />
-        <h2 className="component-usage-heading">Usage</h2>
+        <Typography variant="headline-2" className="component-usage-heading">
+          Usage
+        </Typography>
         <br />
-        <p className="component-usage">{cmp.usage}</p>
+        <Typography variant="body-lg" className="component-usage">
+          {cmp.usage}
+        </Typography>
         <br />
         <br />
         <ComponentCard component={cmp} />
         <br />
-        <h2 className="component-usage-heading">Props</h2>
+        <Typography variant="headline-2" className="component-usage-heading">
+          Props
+        </Typography>
         <br />
         <ul className="component-usage">
           {cmp.props.map((prop, index) => (
-            <li key={index}>"{prop}"</li>
+            <li key={index}>
+              "{prop}"{index < cmp.props.length - 1 ? "," : ""}
+            </li>
           ))}
         </ul>
       </div>
