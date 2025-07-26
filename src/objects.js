@@ -316,7 +316,15 @@ export const DefaultInput = () => {
     name: "Text Input with error",
     description:
       "A Text Input allows users to enter text. It's commonly used in forms, search bars, and filters.",
-    keywords: ["input", "text", "form input", "search", "edit text", "error"],
+    keywords: [
+      "input",
+      "text",
+      "form input",
+      "search",
+      "edit text",
+      "error",
+      "responsive",
+    ],
     category: "Form",
     codeSnippet: `
 import { VisaErrorTiny } from '@visa/nova-icons-react';
@@ -860,6 +868,50 @@ export const DefaultSwitch = () => {
 </>
 `,
     props: ["checked", "onChange", "name", "value"],
+    dependencies: [],
+    framework: "React",
+  },
+  {
+    sno: 13,
+    id: "single-line-input-001",
+    name: "Single-line Input",
+    description:
+      "A Switch is a toggle button that allows users to switch between two states.",
+    keywords: [
+      "input",
+      "text",
+      "single-line",
+      "single-line input",
+      "single-line input field",
+      "responsive",
+    ],
+    category: "Basic UI",
+    codeSnippet: `
+import { Input, InputContainer, Label, Utility } from '@visa/nova-react';
+
+// TIP: Customize this ID, pass it as a prop, or auto-generate it with useId() from @react
+const id = 'input-default';
+
+export const DefaultInput = () => {
+  return (
+    <Utility vFlex vFlexCol vGap={4}>
+      <Label htmlFor={id}>Label (required)</Label>
+      <InputContainer>
+        <Input aria-required="true" id={id} type="text" />
+      </InputContainer>
+    </Utility>
+  );
+};
+  `,
+    renderSnippet: `
+<>
+  <Utility vFlex vFlexWrap vGap={10} vJustifyContent="between" vMargin={8} style={{ maxInlineSize: '288px' }}>
+    <SwitchLabel htmlFor="default-switch-example-switch">Label</SwitchLabel>
+    <Switch id="default-switch-example-switch" name="default-switch"/>
+  </Utility>
+</>
+`,
+    props: ["type", "value", "onChange", "placeholder", "input"],
     dependencies: [],
     framework: "React",
   },
