@@ -18,8 +18,6 @@ export const componentUI = [
       "responsive",
     ],
     category: "Form",
-    usage:
-      "Used in forms where multiple choices are allowed, such as terms acceptance or feature selection.",
     codeSnippet: `
 import { Checkbox, Label, Utility } from '@visa/nova-react';
 
@@ -65,8 +63,6 @@ export const DefaultCheckbox = () => {
       "responsive",
     ],
     category: "Form",
-    usage:
-      "Used in forms where multiple choices are allowed, such as terms acceptance or feature selection.",
     codeSnippet: `
 import { VisaErrorTiny } from '@visa/nova-icons-react';
 import { ChangeEvent, useRef, useState } from 'react';
@@ -203,8 +199,6 @@ export const ValidationCheckbox = () => {
       "label",
     ],
     category: "Form",
-    usage:
-      "Used in forms where multiple choices are allowed, such as terms acceptance or feature selection.",
     codeSnippet: `
 import { Checkbox, Label, Utility } from '@visa/nova-react';
 
@@ -248,7 +242,6 @@ export const DisabledCheckedCheckbox = () => {
       "A Button is a trigger for actions such as submitting a form, opening a modal, or navigating to another page.",
     keywords: ["button", "click", "CTA", "submit", "trigger"],
     category: "Basic UI",
-    usage: "Used everywhere — forms, modals, navigation, cards, etc.",
     codeSnippet: `
 import { Button } from '@visa/nova-react';
 
@@ -296,7 +289,6 @@ export const SecondaryButton = () => {
       "A Text Input allows users to enter text. It's commonly used in forms, search bars, and filters.",
     keywords: ["input", "text", "form input", "search", "edit text"],
     category: "Form",
-    usage: "Used for collecting user input like names, emails, addresses, etc.",
     codeSnippet: `
 import { Input, InputContainer, Label, Utility } from '@visa/nova-react';
 
@@ -337,7 +329,6 @@ export const DefaultInput = () => {
       "A Text Input allows users to enter text. It's commonly used in forms, search bars, and filters.",
     keywords: ["input", "text", "form input", "search", "edit text", "error"],
     category: "Form",
-    usage: "Used for collecting user input like names, emails, addresses, etc.",
     codeSnippet: `
 import { VisaErrorTiny } from '@visa/nova-icons-react';
 import { ChangeEvent, useRef, useState } from 'react';
@@ -494,8 +485,6 @@ export const ErrorInput = () => {
       "responsive",
     ],
     category: "Form",
-    usage:
-      "Used in surveys, preference selection, or gender/age group selections.",
     codeSnippet: `
 import { Label, Radio, Utility } from '@visa/nova-react';
 
@@ -540,8 +529,6 @@ export const DefaultRadio = () => {
       "responsive",
     ],
     category: "Form",
-    usage:
-      "Used in surveys, preference selection, or gender/age group selections.",
     codeSnippet: `
 import { ChangeEvent, useRef, useState } from 'react';
 import { VisaErrorTiny } from '@visa/nova-icons-react';
@@ -696,7 +683,6 @@ export const ErrorRadio = () => {
       "responsive",
     ],
     category: "Basic UI",
-    usage: "It can be used to display content in a card format.",
     codeSnippet: `
 import { VisaChevronRightTiny } from '@visa/nova-icons-react';
 import {
@@ -776,7 +762,6 @@ export const DefaultContentCard = () => {
       "responsive",
     ],
     category: "Basic UI",
-    usage: "It can be used to display content in a card format.",
     codeSnippet: `
 import { VisaChevronRightTiny } from '@visa/nova-icons-react';
 import {
@@ -869,7 +854,6 @@ export const ImageHeaderContentCard = () => {
       "responsive",
     ],
     category: "Basic UI",
-    usage: "It can be used to display a user's profile picture.",
     codeSnippet: `
 import { Switch, SwitchLabel, Utility } from '@visa/nova-react';
 

@@ -26,17 +26,8 @@ export default function App() {
           {cmp.description}
         </Typography>
         <br />
-        <br />
-        <Typography variant="headline-2" className="component-usage-heading">
-          Usage
-        </Typography>
-        <br />
-        <Typography variant="body-lg" className="component-usage">
-          {cmp.usage}
-        </Typography>
-        <br />
-        <br />
         <ComponentCard component={cmp} />
+        <br />
         <br />
         <Typography variant="headline-2" className="component-usage-heading">
           Props
