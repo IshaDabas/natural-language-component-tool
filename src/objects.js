@@ -7,14 +7,11 @@ export const componentUI = [
       "A checkbox lets users select one or more options from a set. It's used for toggling preferences.",
     keywords: [
       "checkbox",
-      "form control",
       "toggle",
       "boolean input",
       "check box",
       "form control",
       "form",
-      "form control",
-      "form control",
       "responsive",
     ],
     category: "Form",
@@ -41,7 +38,7 @@ export const DefaultCheckbox = () => {
   </Utility>
 </>
 `,
-    props: ["checked", "onChange", "disabled", "name", "value"],
+    props: ["checked", "onChange", "name", "value"],
     dependencies: [],
     framework: "React",
   },
@@ -221,15 +218,7 @@ export const DisabledCheckedCheckbox = () => {
   </Utility>
 </>
 `,
-    props: [
-      "checked",
-      "onChange",
-      "disabled",
-      "name",
-      "value",
-      "error",
-      "label",
-    ],
+    props: ["checked", "onChange", "disabled", "name", "value", "label"],
     dependencies: [],
     framework: "React",
   },
@@ -316,7 +305,7 @@ export const DefaultInput = () => {
   </Utility>
 </>
 `,
-    props: ["type", "value", "onChange", "placeholder"],
+    props: ["type", "value", "onChange", "placeholder", "input"],
     dependencies: [],
     framework: "React",
   },
@@ -463,7 +452,7 @@ export const ErrorInput = () => {
   );
 }
 `,
-    props: ["type", "value", "onChange", "placeholder"],
+    props: ["type", "value", "onChange", "placeholder", "input"],
     dependencies: [],
     framework: "React",
   },
@@ -480,7 +469,6 @@ export const ErrorInput = () => {
       "single select",
       "options",
       "survey",
-      "error",
       "label",
       "responsive",
     ],
@@ -508,7 +496,7 @@ export const DefaultRadio = () => {
   </Utility>
 </>
 `,
-    props: ["value", "onChange", "checked", "name", "error", "label"],
+    props: ["value", "onChange", "checked", "name", "label"],
     dependencies: [],
     framework: "React",
   },
@@ -654,7 +642,7 @@ export const ErrorRadio = () => {
   );
 }
 `,
-    props: ["value", "onChange", "checked", "name", "error"],
+    props: ["value", "onChange", "checked", "name"],
     dependencies: [],
     framework: "React",
   },
@@ -678,8 +666,6 @@ export const ErrorRadio = () => {
       "image card",
       "image content card",
       "image content",
-      "image content card",
-      "image content card",
       "responsive",
     ],
     category: "Basic UI",
@@ -757,8 +743,6 @@ export const DefaultContentCard = () => {
       "image card",
       "image content card",
       "image content",
-      "image content card",
-      "image content card",
       "responsive",
     ],
     category: "Basic UI",
@@ -846,7 +830,6 @@ export const ImageHeaderContentCard = () => {
       "off",
       "on/off",
       "on/off switch",
-      "on/off switch",
       "login",
       "signup",
       "signin",
@@ -876,7 +859,7 @@ export const DefaultSwitch = () => {
   </Utility>
 </>
 `,
-    props: ["checked", "onChange", "disabled", "name", "value"],
+    props: ["checked", "onChange", "name", "value"],
     dependencies: [],
     framework: "React",
   },
