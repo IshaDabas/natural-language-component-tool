@@ -87,28 +87,37 @@ The application includes 12 components from the Nova Design System:
 - **Code Copy**: One-click code copying with toast notifications
 - **Search Functionality**: Real-time search through component names and keywords
 - **Theme System**: CSS-based theme switching with light/dark modes
-- **Accessibility**: ARIA attributes, semantic HTML, and keyboard navigation
+- **Accessibility**: ARIA attributes and semantic HTML
+- **Screen Reader Support**: Comprehensive ARIA labels, semantic HTML roles, and live regions for dynamic content updates
 
 ## Approach and Technical Choices
 
-### Framework Selection
+### 1. Problem Understanding
+
+The goal was to create a tool where users can type natural language requests (e.g., "responsive login form with remember me") and receive Nova component suggestions with code snippets.
+
+### 2. Planning & Strategy
+
+I began by identifying common user intents and mapping them to Nova component categories. I also ensured the UI was intuitive and responsive across devices.
+
+### 3. Framework Selection
 
 - **React**: Chosen for component-driven development and ecosystem maturity
 - **Vite**: Fast development server and build tool for modern web development
 - **React Router**: Client-side routing for single-page application experience
 
-### Design System Integration
+### 4. Design System Integration
 
 - **@visa/nova-react**: Leverages Visa's official design system for consistency
 - **@visa/nova-styles**: Provides base styling and theme support
 - **@visa/nova-icons-react**: Accessible icon library
 
-### State Management
+### 5. State Management
 
 - **React Hooks**: Local state management using useState and useEffect
 - **URL Parameters**: Component selection and search state managed through routing
 
-### Code Organization
+### 6. Code Organization
 
 - **Component-based Architecture**: Modular components for reusability
 - **Centralized Data**: All component definitions stored in `objects.js`
@@ -139,44 +148,25 @@ The application includes 12 components from the Nova Design System:
 ### Enhanced Search & Discovery
 
 - **Advanced Filtering**: Filter by category, complexity, or usage patterns
-- **Fuzzy Search**: Better search algorithms for partial matches
 - **Search History**: Remember recent searches and popular components
 - **Component Tags**: More sophisticated tagging and categorization
 
 ### User Experience Improvements
 
 - **Component Favorites**: Allow users to save and organize favorite components
-- **Custom Themes**: User-defined theme customization
 - **Export Options**: Export code snippets in different formats
-- **Component Comparison**: Side-by-side component comparison
 
 ### Technical Enhancements
 
 - **Performance Optimization**: Virtual scrolling for large component lists
 - **Caching**: Implement component caching and lazy loading
-- **Analytics**: Track component usage and search patterns
 - **Backend Integration**: Dynamic component library with API support
 
-### Accessibility Improvements
+## AI Tools used :
 
-- **Advanced Focus Management**: Better focus trapping and restoration
-- **Screen Reader Optimization**: Enhanced ARIA labels and descriptions
-- **Keyboard Shortcuts**: Comprehensive keyboard navigation support
-- **High Contrast Mode**: Additional accessibility themes
-
-### Development Experience
-
-- **Component Testing**: Automated tests for component functionality
-- **Documentation**: Inline documentation and usage examples
-- **Code Quality**: Enhanced linting and type checking
-- **Build Optimization**: Production build optimization and code splitting
-
-### Content Expansion
-
-- **More Components**: Expand the component library with additional Nova components
-- **Usage Examples**: Real-world usage examples and best practices
-- **Design Guidelines**: Integration with design system documentation
-- **Interactive Tutorials**: Guided tours and learning resources
+**ChatGPT** for planning and references.
+**Cursor AI** for testing and debugging
+**Perplexity** for filtering out renderSnipper from codeSnippet in objects.js file
 
 ---
 
