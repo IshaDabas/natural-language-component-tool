@@ -150,6 +150,7 @@ I began by identifying common user intents and mapping them to Nova component ca
 - **Advanced Filtering**: Filter by category, complexity, or usage patterns
 - **Search History**: Remember recent searches and popular components
 - **Component Tags**: More sophisticated tagging and categorization
+- **Content categorization**: Added more sections like buttons, checkbox, dropdown, etc. so that the user can manually look for components instead of searching for components in search bar.
 
 ### User Experience Improvements
 
