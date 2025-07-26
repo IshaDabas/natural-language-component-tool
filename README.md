@@ -41,15 +41,15 @@ The application includes 12 components from the Nova Design System:
 1. **CheckBox with Label** - Basic checkbox with label
 2. **CheckBox with Error** - Checkbox with validation and error handling
 3. **Disabled checkbox** - Disabled state checkbox
-4. **Login Form** - Basic login form implementation
-5. **Primary-Button** - Primary action button
-6. **Secondary-Button** - Secondary action button
-7. **Text Input** - Basic text input field
-8. **Text Input with error** - Text input with validation
-9. **Radio Button with label** - Basic radio button
-10. **Radio Button with error** - Radio button with validation
-11. **Default Content Card** - Content card component
-12. **Content Card with image** - Content card with image
+4. **Primary-Button** - Primary action button
+5. **Secondary-Button** - Secondary action button
+6. **Text Input** - Basic text input field
+7. **Text Input with error** - Text input with validation
+8. **Radio Button with label** - Basic radio button
+9. **Radio Button with error** - Radio button with validation
+10. **Default Content Card** - Content card component
+11. **Content Card with image** - Content card with image
+12. **Switch** - Toggle Button
 
 ## Usage
 

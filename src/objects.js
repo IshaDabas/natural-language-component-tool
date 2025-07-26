@@ -15,6 +15,7 @@ export const componentUI = [
       "form",
       "form control",
       "form control",
+      "responsive",
     ],
     category: "Form",
     usage:
@@ -61,6 +62,7 @@ export const DefaultCheckbox = () => {
       "check box",
       "error",
       "label",
+      "responsive",
     ],
     category: "Form",
     usage:
@@ -489,6 +491,7 @@ export const ErrorInput = () => {
       "survey",
       "error",
       "label",
+      "responsive",
     ],
     category: "Form",
     usage:
@@ -527,7 +530,15 @@ export const DefaultRadio = () => {
     name: "Radio Button with error",
     description:
       "Radio buttons let users select a single option from multiple choices.",
-    keywords: ["radio", "form", "single select", "options", "survey", "error"],
+    keywords: [
+      "radio",
+      "form",
+      "single select",
+      "options",
+      "survey",
+      "error",
+      "responsive",
+    ],
     category: "Form",
     usage:
       "Used in surveys, preference selection, or gender/age group selections.",
@@ -682,6 +693,7 @@ export const ErrorRadio = () => {
       "image content",
       "image content card",
       "image content card",
+      "responsive",
     ],
     category: "Basic UI",
     usage: "It can be used to display content in a card format.",
@@ -761,6 +773,7 @@ export const DefaultContentCard = () => {
       "image content",
       "image content card",
       "image content card",
+      "responsive",
     ],
     category: "Basic UI",
     usage: "It can be used to display content in a card format.",
@@ -809,10 +822,10 @@ export const ImageHeaderContentCard = () => {
 };
     `,
     renderSnippet: `
-<ContentCard style={{inlineSize: '50vw'}}>
+<ContentCard style={{inlineSize: '70vw'}}>
   <ContentCardImage
-    alt=""
-    src="/content-card-image.png"
+    alt="scenery"
+    src="/src/assets/scenery.png"
     style={{ blockSize: 'auto', inlineSize: '100%', objectFit: 'contain', overflow: 'hidden' }}
     tag="img"
   />
@@ -853,6 +866,7 @@ export const ImageHeaderContentCard = () => {
       "signup",
       "signin",
       "signout",
+      "responsive",
     ],
     category: "Basic UI",
     usage: "It can be used to display a user's profile picture.",
