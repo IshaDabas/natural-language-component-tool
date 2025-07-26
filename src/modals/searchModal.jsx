@@ -36,6 +36,7 @@ export default function SearchModal({ visible, onClose }) {
           </h3>
 
           <input
+            autoComplete={"off"}
             name="search"
             autoFocus
             type="text"
@@ -57,7 +58,7 @@ export default function SearchModal({ visible, onClose }) {
                   role="option"
                   aria-selected="false"
                   onClick={() => {
-                    nav(`/app/${c.sno}`);
+                    nav(`/app/${c.sno}/${search.toLowerCase()}`);
                     onClose();
                     setSearch("");
                   }}

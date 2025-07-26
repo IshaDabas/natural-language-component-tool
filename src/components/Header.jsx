@@ -52,7 +52,8 @@ function PageHeader({ title, subtitle }) {
           aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
           title="Toggle light/dark theme"
         >
-          Theme {theme === "light" ? "🌙" : "☀️"}
+          <span className="label-text">Theme</span>{" "}
+          {theme === "light" ? "🌙" : "☀️"}
         </button>
 
         <button
@@ -61,7 +62,7 @@ function PageHeader({ title, subtitle }) {
           aria-label="Open component search modal"
           title="Search components"
         >
-          Search 🔍
+          <span className="label-text">Search</span> 🔍
         </button>
       </header>
     </>

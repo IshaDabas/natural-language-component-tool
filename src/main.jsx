@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Header />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/app/:index" element={<App />} />
+        <Route path="/app/:index/:search" element={<App />} />
         <Route path="/why-us" element={<WhyUs />} />
       </Routes>
       <Footer />

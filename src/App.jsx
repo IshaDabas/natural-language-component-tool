@@ -5,12 +5,17 @@ import "./styles/theme.css";
 import { useParams } from "react-router-dom";
 
 export default function App() {
-  let { index } = useParams();
-  const cmp = componentUI.filter((c) => String(c.sno) === index)[0];
+  let { index, search } = useParams();
+  const prCmp = componentUI.filter((c) => String(c.sno) === index)[0];
+  const rltdCmp = componentUI.filter(
+    (cmp) =>
+      cmp.name.toLowerCase().includes(search.toLowerCase()) &&
+      String(cmp.sno) !== String(index)
+  );
 
-  console.log(index);
+  const mainCmp = [prCmp, ...rltdCmp];
 
-  return (
+  return mainCmp.map((cmp) => (
     <div className="page-container">
       <div className="main-content">
         <Typography variant="headline-1" className="component-title">
@@ -37,7 +42,7 @@ export default function App() {
           Props
         </Typography>
         <br />
-        <ul className="component-usage">
+        <ul className="props">
           {cmp.props.map((prop, index) => (
             <li key={index}>
               "{prop}"{index < cmp.props.length - 1 ? "," : ""}
@@ -46,5 +51,5 @@ export default function App() {
         </ul>
       </div>
     </div>
-  );
+  ));
 }

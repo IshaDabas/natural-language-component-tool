@@ -18,56 +18,53 @@ export default function LandingPage() {
         className="hero-section"
         aria-label="Hero section with intro and image"
       >
-        <Utility vFlex vPadding={58} className="hero" aria-label="Hero wrapper">
+        <Utility
+          vFlex
+          vFlexRow
+          vGap={40}
+          className="hero-content"
+          aria-label="Hero text and image layout"
+        >
           <Utility
             vFlex
-            vFlexRow
-            vGap={64}
-            className="hero-content"
-            aria-label="Hero text and image layout"
+            vFlexCol
+            vGap={24}
+            className="hero-text"
+            aria-label="Introductory text block"
           >
-            <Utility
-              vFlex
-              vFlexCol
-              vGap={24}
-              className="hero-text"
-              aria-label="Introductory text block"
+            <Typography
+              variant="display-2"
+              className="hero-title"
+              aria-label="Landing page title"
             >
-              <Typography
-                variant="headline-1"
-                className="hero-title"
-                aria-label="Landing page title"
-              >
-                Transform Natural Language to UI
-              </Typography>
+              Transform Natural Language to UI
+            </Typography>
 
-              <Typography
-                variant="body-lg"
-                className="hero-subtitle"
-                aria-label="Landing page subtitle"
-              >
-                Empower your design system with intelligent suggestions that
-                help developers ship faster with confidence and design
-                precision.
-              </Typography>
+            <Typography
+              variant="body-lg"
+              className="hero-subtitle"
+              aria-label="Landing page subtitle"
+            >
+              Empower your design system with intelligent suggestions that help
+              developers ship faster with confidence and design precision.
+            </Typography>
 
-              <Button
-                className="hero-button"
-                variant="primary"
-                onClick={() => navigate("/why-us")}
-                aria-label="Learn more about our design system features"
-              >
-                Know More <VisaArrowEndHigh style={{ marginLeft: 20 }} />
-              </Button>
-            </Utility>
+            <Button
+              className="hero-button"
+              variant="primary"
+              onClick={() => navigate("/why-us")}
+              aria-label="Learn more about our design system features"
+            >
+              Know More <VisaArrowEndHigh style={{ marginLeft: 20 }} />
+            </Button>
+          </Utility>
 
-            <Utility aria-label="Hero image container">
-              <img
-                src={HeroImg}
-                alt="Illustration showing natural language transformed into a UI layout"
-                className="hero-image"
-              />
-            </Utility>
+          <Utility aria-label="Hero image container">
+            <img
+              src={HeroImg}
+              alt="Illustration showing natural language transformed into a UI layout"
+              className="hero-image"
+            />
           </Utility>
         </Utility>
       </section>

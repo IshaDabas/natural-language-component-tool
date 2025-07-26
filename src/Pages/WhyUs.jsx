@@ -123,12 +123,12 @@ export default function WhyUs() {
             <Utility element={<ContentCardBody />} vFlex vFlexCol vGap={4}>
               <ContentCardTitle
                 className="content-card-title"
-                variant="headline-4"
+                variant="headline-2"
               >
                 What is a design system?
               </ContentCardTitle>
 
-              <Typography
+              <p
                 className="content-card-description"
                 aria-label="Design system description"
               >
@@ -143,7 +143,7 @@ export default function WhyUs() {
                 the latest technological advancements. By leveraging these
                 assets, teams can streamline their workflows, foster innovation,
                 and create cohesive user experiences across all Visa products.
-              </Typography>
+              </p>
             </Utility>
           </ContentCard>
 
@@ -161,11 +161,11 @@ export default function WhyUs() {
             <Utility element={<ContentCardBody />} vFlex vFlexCol vGap={4}>
               <ContentCardTitle
                 className="content-card-title"
-                variant="headline-4"
+                variant="headline-2"
               >
                 Who manages VPDS?
               </ContentCardTitle>
-              <Typography
+              <p
                 className="content-card-description"
                 aria-label="VPDS management description"
               >
@@ -177,7 +177,7 @@ export default function WhyUs() {
                 feedback, and industry best practices. To connect with the VPDS
                 team or learn more about office hours or quarterly updates,
                 visit Support.
-              </Typography>
+              </p>
             </Utility>
           </ContentCard>
         </section>

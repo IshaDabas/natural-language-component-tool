@@ -34,10 +34,19 @@ export const DefaultCheckbox = () => {
   );
 };
     `,
+    renderSnippet: `
+<>
+  <Utility vAlignItems="center" vFlex vGap={2}>
+    <Checkbox id="checkbox-default" />
+    <Label htmlFor="checkbox-default">Label</Label>
+  </Utility>
+</>
+`,
     props: ["checked", "onChange", "disabled", "name", "value"],
     dependencies: [],
     framework: "React",
   },
+
   {
     sno: 2,
     id: "checkbox-002",
@@ -108,7 +117,61 @@ export const ValidationCheckbox = () => {
       </UtilityFragment>
     </>
   );
-};`,
+};
+    `,
+    renderSnippet: `
+() => {
+  const checkboxRef = React.useRef(null);
+  const [checked, setChecked] = React.useState(false);
+  const [invalid, setInvalid] = React.useState(false);
+  const id = "validation-checkbox";
+
+  const onCheckboxChange = (event) => setChecked(event.target.checked);
+
+  const onSubmit = () => {
+    if (checked) return setInvalid(false);
+    setInvalid(true);
+    checkboxRef.current?.focus();
+  };
+
+  return (
+    <>
+      <Utility tag="fieldset" vFlex vFlexCol>
+        <Utility vAlignItems="center" vFlex vGap={2}>
+          <Checkbox
+            aria-describedby={id + "-message"}
+            aria-invalid={invalid}
+            aria-required="true"
+            checked={checked}
+            id={id}
+            onChange={onCheckboxChange}
+            ref={checkboxRef}
+            value="1"
+          />
+          <Label htmlFor={id}>Label</Label>
+        </Utility>
+        {invalid && (
+          <UtilityFragment vMarginTop={4}>
+            <InputMessage
+              aria-atomic="true"
+              aria-live="assertive"
+              id={id + "-message"}
+              role="alert"
+              variant="body-3"
+            >
+              <VisaErrorTiny />
+              This is required text that describes the error in more detail.
+            </InputMessage>
+          </UtilityFragment>
+        )}
+      </Utility>
+      <UtilityFragment vMarginTop={12}>
+        <Button onClick={onSubmit}>Submit</Button>
+      </UtilityFragment>
+    </>
+  );
+}
+`,
     props: [
       "checked",
       "onChange",
@@ -121,6 +184,7 @@ export const ValidationCheckbox = () => {
     dependencies: [],
     framework: "React",
   },
+
   {
     sno: 3,
     id: "checkbox-003",
@@ -153,6 +217,14 @@ export const DisabledCheckedCheckbox = () => {
     </Utility>
   );
 };`,
+    renderSnippet: `
+<>
+  <Utility vAlignItems="center" vFlex vGap={2}>
+    <Checkbox id="checkbox-disabled-checked" disabled checked />
+    <Label htmlFor="checkbox-disabled-checked">Label</Label>
+  </Utility>
+</>
+`,
     props: [
       "checked",
       "onChange",
@@ -165,6 +237,7 @@ export const DisabledCheckedCheckbox = () => {
     dependencies: [],
     framework: "React",
   },
+
   {
     sno: 4,
     id: "login-form-001",
@@ -218,10 +291,42 @@ function LoginForm() {
 }
 export default LoginForm;
     `,
+    renderSnippet: `
+() => {
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  
+  const handleSubmit = e => {
+    e.preventDefault();
+    alert("Logging in with: " + email + " " + password);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="email"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        placeholder="Email"
+        required
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+        placeholder="Password"
+        required
+      />
+      <button type="submit">Login</button>
+    </form>
+  );
+}
+`,
     props: ["email", "password", "onSubmit", "error", "label"],
     dependencies: [],
     framework: "React",
   },
+
   {
     sno: 5,
     id: "button-001",
@@ -238,10 +343,14 @@ export const DefaultButton = () => {
   return <Button>Primary action</Button>;
 };
     `,
+    renderSnippet: `
+<Button>Primary action</Button>
+`,
     props: ["onClick", "disabled", "type", "className"],
     dependencies: [],
     framework: "React",
   },
+
   {
     sno: 6,
     id: "button-002",
@@ -258,10 +367,14 @@ export const SecondaryButton = () => {
   return <Button colorScheme="secondary">Secondary action</Button>;
 };
     `,
+    renderSnippet: `
+<Button colorScheme="secondary">Secondary action</Button>
+`,
     props: ["onClick", "disabled", "type", "className"],
     dependencies: [],
     framework: "React",
   },
+
   {
     sno: 7,
     id: "textinput-001",
@@ -288,10 +401,21 @@ export const DefaultInput = () => {
   );
 };
     `,
+    renderSnippet: `
+<>
+  <Utility vFlex vFlexCol vGap={4}>
+    <Label htmlFor="input-default">Label (required)</Label>
+    <InputContainer>
+      <Input aria-required="true" id="input-default" type="text" />
+    </InputContainer>
+  </Utility>
+</>
+`,
     props: ["type", "value", "onChange", "placeholder"],
     dependencies: [],
     framework: "React",
   },
+
   {
     sno: 8,
     id: "textinput-002",
@@ -377,10 +501,69 @@ export const ErrorInput = () => {
   );
 };
     `,
+    renderSnippet: `
+() => {
+  const id = "input-error";
+  const DEFAULT_INPUT_STATE = { value: '', error: false };
+  const [inputState, setInputState] = React.useState(DEFAULT_INPUT_STATE);
+  const inputRef = React.useRef(null);
+
+  const handleSubmit = () => {
+    setInputState(prev => ({ ...prev, error: true }));
+    if(inputRef.current) inputRef.current.focus();
+  };
+
+  const handleReset = () => setInputState(DEFAULT_INPUT_STATE);
+
+  const handleInputChange = (e) => {
+    setInputState({ value: e.target.value, error: false });
+  };
+
+  return (
+    <>
+      <Utility vFlex vFlexCol vGap={4}>
+        <Label htmlFor={id}>Label (required)</Label>
+        <InputContainer>
+          <Input
+            aria-describedby={id + "-message"}
+            aria-invalid={inputState.error}
+            aria-required="true"
+            ref={inputRef}
+            id={id}
+            type="text"
+            value={inputState.value}
+            onChange={handleInputChange}
+          />
+        </InputContainer>
+        {inputState.error && (
+          <InputMessage
+            aria-atomic="true"
+            aria-live="assertive"
+            id={id + "-message"}
+            role="alert"
+          >
+            <VisaErrorTiny />
+            This is required text that describes the error in more detail.
+          </InputMessage>
+        )}
+      </Utility>
+      <Utility vFlex vGap={12} vMarginTop={16}>
+        <Button id={id + "-submit-button"} onClick={handleSubmit}>
+          Submit
+        </Button>
+        <Button id={id + "-reset-button"} colorScheme="secondary" onClick={handleReset}>
+          Reset
+        </Button>
+      </Utility>
+    </>
+  );
+}
+`,
     props: ["type", "value", "onChange", "placeholder"],
     dependencies: [],
     framework: "React",
   },
+
   {
     sno: 9,
     id: "radio-001",
@@ -414,10 +597,19 @@ export const DefaultRadio = () => {
   );
 };
     `,
+    renderSnippet: `
+<>
+  <Utility vAlignItems="center" vFlex vGap={2}>
+    <Radio id="default-radio" name="default-radio" />
+    <Label htmlFor="default-radio">Label</Label>
+  </Utility>
+</>
+`,
     props: ["value", "onChange", "checked", "name", "error", "label"],
     dependencies: [],
     framework: "React",
   },
+
   {
     sno: 10,
     id: "radio-002",
@@ -494,10 +686,70 @@ export const ErrorRadio = () => {
   );
 };
     `,
+    renderSnippet: `
+() => {
+  const id = "radio-error";
+  const radioRef = React.useRef(null);
+  const [checked, setChecked] = React.useState(false);
+  const [invalid, setInvalid] = React.useState(false);
+
+  const onRadioButtonChange = (event) => setChecked(event.target.checked);
+  
+  const onSubmit = () => {
+    if (checked) setInvalid(false);
+    else {
+      setInvalid(true);
+      radioRef.current?.focus();
+    }
+  };
+
+  return (
+    <>
+      <fieldset aria-labelledby={id + "-message"}>
+        <Utility vFlex vAlignItems="center" vGap={2}>
+          <Radio
+            aria-invalid={invalid}
+            aria-required="true"
+            checked={checked}
+            id={id}
+            name={id}
+            onChange={onRadioButtonChange}
+            ref={radioRef}
+          />
+          <Label htmlFor={id} id={id + "-label"}>
+            Label
+          </Label>
+        </Utility>
+        {invalid && (
+          <UtilityFragment vAlignItems="center" vFlex vGap={2} vMarginTop={4}>
+            <InputMessage
+              aria-atomic="true"
+              aria-live="assertive"
+              className="v-typography-label"
+              id={id + "-message"}
+              role="alert"
+            >
+              <VisaErrorTiny />
+              This is required text that describes the error in more detail.
+            </InputMessage>
+          </UtilityFragment>
+        )}
+      </fieldset>
+      <Utility vFlex vGap={12} vMarginTop={12}>
+        <Button onClick={onSubmit}>Submit</Button>
+        <Button colorScheme="secondary" onClick={() => setChecked(false)}>
+          Reset
+        </Button>
+      </Utility>
+    </>
+  );
+}
+`,
     props: ["value", "onChange", "checked", "name", "error"],
     dependencies: [],
     framework: "React",
   },
+
   {
     sno: 11,
     id: "content-card-001",
@@ -555,10 +807,28 @@ export const DefaultContentCard = () => {
   );
 };
     `,
+    renderSnippet: `
+<ContentCard>
+  <Utility element={<ContentCardBody />} vFlex vFlexCol vGap={4}>
+    <ContentCardTitle variant="headline-4">Headline</ContentCardTitle>
+    <ContentCardSubtitle variant="subtitle-3">Subtitle</ContentCardSubtitle>
+    <Typography className="v-pt-4">
+      This is optional text that describes the headline and subtitle in more detail.
+    </Typography>
+    <Utility vAlignItems="center" vFlex vFlexWrap vGap={16} vPaddingTop={12}>
+      <Button>Primary action</Button>
+      <Link href="./content-card" noUnderline>
+        Destination label <VisaChevronRightTiny rtl />
+      </Link>
+    </Utility>
+  </Utility>
+</ContentCard>
+`,
     props: ["title", "subtitle", "body", "button", "link"],
     dependencies: [],
     framework: "React",
   },
+
   {
     sno: 12,
     id: "content-card-002",
@@ -584,9 +854,8 @@ export const DefaultContentCard = () => {
     category: "Basic UI",
     usage: "It can be used to display content in a card format.",
     codeSnippet: `
-
-    import { VisaChevronRightTiny } from '@visa/nova-icons-react';
-   import {
+import { VisaChevronRightTiny } from '@visa/nova-icons-react';
+import {
   Button,
   ContentCard,
   ContentCardBody,
@@ -627,9 +896,30 @@ export const ImageHeaderContentCard = () => {
     </ContentCard>
   );
 };
-
- 
     `,
+    renderSnippet: `
+<ContentCard style={{inlineSize: '50vw'}}>
+  <ContentCardImage
+    alt=""
+    src="/content-card-image.png"
+    style={{ blockSize: 'auto', inlineSize: '100%', objectFit: 'contain', overflow: 'hidden' }}
+    tag="img"
+  />
+  <Utility element={<ContentCardBody />} vFlex vFlexCol vGap={4}>
+    <ContentCardTitle variant="headline-4">Headline</ContentCardTitle>
+    <ContentCardSubtitle variant="subtitle-3">Subtitle</ContentCardSubtitle>
+    <Typography className="v-pt-4">
+      This is optional text that describes the headline and subtitle in more detail.
+    </Typography>
+    <Utility vAlignItems="center" vFlex vFlexWrap vGap={16} vPaddingTop={12}>
+      <Button>Primary action</Button>
+      <Link href="./content-card" noUnderline>
+        Destination label <VisaChevronRightTiny rtl />
+      </Link>
+    </Utility>
+  </Utility>
+</ContentCard>
+`,
     props: ["title", "subtitle", "body", "button", "link", "image"],
     dependencies: [],
     framework: "React",
