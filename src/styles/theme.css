@@ -66,6 +66,7 @@ page-container {
   color: #004279;
   letter-spacing: 0.1em;
   height: 10vh;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .header-title {
