@@ -20,6 +20,9 @@ import {
   Link,
   Typography,
   ContentCardImage,
+  Avatar,
+  Switch,
+  SwitchLabel,
 } from "@visa/nova-react";
 
 const ComponentCard = ({ component }) => {
@@ -46,6 +49,9 @@ const ComponentCard = ({ component }) => {
     Typography,
     VisaChevronRightTiny,
     ContentCardImage,
+    Avatar,
+    Switch,
+    SwitchLabel,
   };
 
   const copyToClipboard = () => {

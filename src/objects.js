@@ -240,95 +240,6 @@ export const DisabledCheckedCheckbox = () => {
 
   {
     sno: 4,
-    id: "login-form-001",
-    name: "Login Form",
-    description:
-      "A Login Form authenticates users with a username and password. Often includes email, password, and remember me checkbox.",
-    keywords: [
-      "login",
-      "authentication",
-      "signin",
-      "form",
-      "credentials",
-      "Remember me",
-      "error",
-      "label",
-    ],
-    category: "Form",
-    usage:
-      "Used as entry point to user-authenticated parts of apps or admin portals.",
-    codeSnippet: `
-import React, { useState } from 'react';
-
-function LoginForm() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Logging in with:", email, password);
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        required
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-        required
-      />
-      <button type="submit">Login</button>
-    </form>
-  );
-}
-export default LoginForm;
-    `,
-    renderSnippet: `
-() => {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  
-  const handleSubmit = e => {
-    e.preventDefault();
-    alert("Logging in with: " + email + " " + password);
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        placeholder="Email"
-        required
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
-        placeholder="Password"
-        required
-      />
-      <button type="submit">Login</button>
-    </form>
-  );
-}
-`,
-    props: ["email", "password", "onSubmit", "error", "label"],
-    dependencies: [],
-    framework: "React",
-  },
-
-  {
-    sno: 5,
     id: "button-001",
     name: "Primary-Button",
     description:
@@ -352,7 +263,7 @@ export const DefaultButton = () => {
   },
 
   {
-    sno: 6,
+    sno: 5,
     id: "button-002",
     name: "Secondary-Button",
     description:
@@ -376,7 +287,7 @@ export const SecondaryButton = () => {
   },
 
   {
-    sno: 7,
+    sno: 6,
     id: "textinput-001",
     name: "Text Input",
     description:
@@ -417,7 +328,7 @@ export const DefaultInput = () => {
   },
 
   {
-    sno: 8,
+    sno: 7,
     id: "textinput-002",
     name: "Text Input with error",
     description:
@@ -565,7 +476,7 @@ export const ErrorInput = () => {
   },
 
   {
-    sno: 9,
+    sno: 8,
     id: "radio-001",
     name: "Radio Button with label",
     description:
@@ -611,7 +522,7 @@ export const DefaultRadio = () => {
   },
 
   {
-    sno: 10,
+    sno: 9,
     id: "radio-002",
     name: "Radio Button with error",
     description:
@@ -751,7 +662,7 @@ export const ErrorRadio = () => {
   },
 
   {
-    sno: 11,
+    sno: 10,
     id: "content-card-001",
     name: "Default Content Card",
     description:
@@ -830,7 +741,7 @@ export const DefaultContentCard = () => {
   },
 
   {
-    sno: 12,
+    sno: 11,
     id: "content-card-002",
     name: "Content Card with image",
     description:
@@ -921,6 +832,53 @@ export const ImageHeaderContentCard = () => {
 </ContentCard>
 `,
     props: ["title", "subtitle", "body", "button", "link", "image"],
+    dependencies: [],
+    framework: "React",
+  },
+  {
+    sno: 12,
+    id: "switch-001",
+    name: "Switch",
+    description:
+      "A Switch is a toggle button that allows users to switch between two states.",
+    keywords: [
+      "switch",
+      "toggle",
+      "on",
+      "off",
+      "on/off",
+      "on/off switch",
+      "on/off switch",
+      "login",
+      "signup",
+      "signin",
+      "signout",
+    ],
+    category: "Basic UI",
+    usage: "It can be used to display a user's profile picture.",
+    codeSnippet: `
+import { Switch, SwitchLabel, Utility } from '@visa/nova-react';
+
+const id = 'default-switch-example';
+
+export const DefaultSwitch = () => {
+  return (
+    <Utility vFlex vFlexWrap vGap={10} vJustifyContent="between" vMargin={8} style={{ maxInlineSize: '288px' }}>
+      <SwitchLabel htmlFor={\`\${id}-switch\`}>Label</SwitchLabel>
+      <Switch id={\`\${id}-switch\`} name="default-switch" />
+    </Utility>
+  );
+};
+  `,
+    renderSnippet: `
+<>
+  <Utility vFlex vFlexWrap vGap={10} vJustifyContent="between" vMargin={8} style={{ maxInlineSize: '288px' }}>
+    <SwitchLabel htmlFor="default-switch-example-switch">Label</SwitchLabel>
+    <Switch id="default-switch-example-switch" name="default-switch"/>
+  </Utility>
+</>
+`,
+    props: ["checked", "onChange", "disabled", "name", "value"],
     dependencies: [],
     framework: "React",
   },
