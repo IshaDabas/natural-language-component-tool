@@ -70,5 +70,5 @@ function PageHeader({ title, subtitle }) {
 }
 
 export default function Header() {
-  return <PageHeader title="Visa Nova Component Suggesting Tool" />;
+  return <PageHeader title="Visa NCST" />;
 }

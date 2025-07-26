@@ -61,26 +61,16 @@ page-container {
 .header {
   display: flex;
   flex-direction: row;
-  padding-top: 3rem;
+  padding-top: 2rem;
   padding-left: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid #000000;
-  margin-bottom: 2rem;
-  font-weight: bold;
   color: #004279;
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: left;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #dbe7f1;
-  height: 12vh;
+  height: 10vh;
+  border-bottom: 2px solid #000000;
 }
 
 .header-title {
   font-family: Verdana, sans-serif;
-  text-align: left;
   color: var(--color-accentt);
 }
 
@@ -323,7 +313,7 @@ ul.search-results {
 
 .toggle-theme {
   position: absolute;
-  top: 40px;
+  top: 25px;
   right: 22%;
   width: 8%;
   height: 46px;
@@ -343,7 +333,7 @@ ul.search-results {
 
 .search-icon {
   position: absolute;
-  top: 40px;
+  top: 25px;
   right: 12%;
   width: 8%;
   height: 46px;
@@ -620,21 +610,21 @@ body,
   }
 
   .header-title {
-    font-size: 1.4rem;
-    padding-top: 0.5rem;
+    font-size: 2rem;
+    padding-top: 1rem;
     position: relative;
   }
 
   .toggle-theme {
-    top: 55px;
-    right: 9%;
+    top: 30px;
+    right: 20%;
     border-radius: 50%;
     width: 38px;
     height: 38px;
   }
   .search-icon {
-    top: 55px;
-    right: 20%;
+    top: 30px;
+    right: 9%;
     border-radius: 50%;
     width: 38px;
     height: 38px;
@@ -791,18 +781,18 @@ body,
 /* TABLET PORTRAIT (601px to 900px) */
 @media (min-width: 601px) and (max-width: 950px) {
   .header-title {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     position: relative;
   }
 
   .toggle-theme {
-    right: 5%;
+    right: 13%;
     border-radius: 50%;
     width: 40px;
     height: 40px;
   }
   .search-icon {
-    right: 13%;
+    right: 5%;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -966,15 +956,15 @@ body,
   }
 
   .toggle-theme {
-    top: 45px;
-    right: 4%;
+    top: 25px;
+    right: 11%;
     border-radius: 50%;
     width: 50px;
     height: 50px;
   }
   .search-icon {
-    top: 45px;
-    right: 11%;
+    top: 25px;
+    right: 4%;
     border-radius: 50%;
     width: 50px;
     height: 50px;
