@@ -1,128 +1,183 @@
-# Visa Nova Component Suggestion tool
+# Visa Nova Component Suggestion Tool
 
-A React-based tool for browsing, searching, and previewing UI components with live previews, code snippets, and theme support.
+A React-based application for browsing and previewing UI components from the Visa Nova Design System with live previews, code snippets, and theme support.
 
-## Features:-
+## Features
 
-- **Live Component Preview:** See a live rendering of each component from the `componentUI` array, above its code snippet.
-- **Code Snippet Copy:** Instantly copy any component's code snippet to your clipboard with a single click and get a toast notification.
-- **Search & Filter:** Search for components by name or keywords. Suggestions appear as you type, and results update in real time.
-- **Search Modal:** Quickly search for components using a dedicated modal (press the search button or shortcut). Results update in real time as you type.
-- **Theme Toggle:** Switch between light and dark mode using the toggle button in the top right corner. All UI elements update to match the selected theme.
-- **Responsive Design:** Works well on both desktop and mobile screens.
+- **Landing Page**: Modern landing page with hero section and call-to-action
+- **Component Browser**: View individual components with detailed information
+- **Live Component Preview**: See live rendering of components using react-live
+- **Code Snippet Display**: View and copy component code snippets
+- **Search Modal**: Search for components by name or keywords with a dedicated modal
+- **Theme Toggle**: Switch between light and dark themes
+- **Responsive Design**: Works well on both desktop and mobile screens
+- **Accessibility**: Built with WCAG and VGAR compliance in mind
 
-## Main Files & Structure:-
+## Project Structure
 
-- `src/App.jsx`: Main app container. Manages state for the input and filtered components.
-- `src/components/Header.jsx`: Displays the app title, subtitle, and the theme toggle button (top right corner).
-- `src/components/InputSection.jsx`: Contains the search input and dropdown suggestions for filtering components.
-- `src/components/ComponentList.jsx`: Renders a list of `ComponentCard` components based on the filtered data.
-- `src/components/ComponentCard.jsx`: Shows each component's name, live preview, code snippet (in an accordion), and copy button.
-- `src/components/Footer.jsx`: Displays the app footer.
-- `src/objects.js`: Contains the `componentUI` array with all component definitions, code snippets, and metadata.
-- `src/styles/theme.css`: All theme variables, color schemes, and component styles for both light and dark modes.
-- `src/modals/searchModal.jsx`: Implements the search modal, allowing users to search for components by name or keyword in a pop-up overlay. Integrates with navigation and closes on selection or button press.
+### Main Files
 
-## Usage:-
+- `src/main.jsx`: Application entry point with routing setup
+- `src/App.jsx`: Component detail view that displays individual components
+- `src/Pages/Home.jsx`: Landing page with hero section
+- `src/Pages/WhyUs.jsx`: Information page about the design system
+- `src/objects.js`: Contains the `componentUI` array with all component definitions
+
+### Components
+
+- `src/components/Header.jsx`: Application header with theme toggle and search
+- `src/components/ComponentCard.jsx`: Displays component previews and code snippets
+- `src/components/Footer.jsx`: Application footer
+- `src/modals/searchModal.jsx`: Search modal for finding components
+
+### Styling
+
+- `src/styles/theme.css`: Theme variables and component styles for light/dark modes
+
+## Available Components
+
+The application includes 12 components from the Nova Design System:
+
+1. **CheckBox with Label** - Basic checkbox with label
+2. **CheckBox with Error** - Checkbox with validation and error handling
+3. **Disabled checkbox** - Disabled state checkbox
+4. **Login Form** - Basic login form implementation
+5. **Primary-Button** - Primary action button
+6. **Secondary-Button** - Secondary action button
+7. **Text Input** - Basic text input field
+8. **Text Input with error** - Text input with validation
+9. **Radio Button with label** - Basic radio button
+10. **Radio Button with error** - Radio button with validation
+11. **Default Content Card** - Content card component
+12. **Content Card with image** - Content card with image
+
+## Usage
 
 1. **Install dependencies:**
+
    ```bash
    npm install
    ```
-2. **Run the app locally:**
+
+2. **Run the development server:**
+
    ```bash
    npm run dev
    ```
-3. **Browse and search:**
 
-   - Use the search input to filter components by name or keyword (It does not have all components but soon it will have more components and their codeSnippets).'
+3. **Navigate the application:**
+   - Visit the landing page at `/`
+   - Use the search modal (🔍 button) to find components
+   - Click on components to view detailed information
+   - Toggle between light and dark themes
 
-   - **List of components that can be searched are:-**
-   - Radio
-   - Radio Button
-   - Form
-   - Checkbox, checkbox
+## Technical Implementation
 
-   - Click a suggestion or press the search button to update the results.
-   - Click the theme toggle (🌙/☀️) in the top right to switch themes.
-   - Click "Copy Source Code" to copy a component's code snippet to your clipboard.
+### Framework & Libraries
 
-## Notes:-
+- **React 19**: Modern React with hooks for state management
+- **React Router DOM**: Client-side routing
+- **@visa/nova-react**: Visa's design system components
+- **react-live**: Live code editing and preview functionality
+- **Vite**: Build tool and development server
 
-- Live previews are generated from the `codeSnippet` in each `componentUI` object. Only simple, self-contained functional components are supported for preview.
-- For security, do not use this approach in production without sandboxing code execution.
-- Theming is handled via CSS variables and `.theme-light`/`.theme-dark` classes on the `<body>`.
+### Key Features
 
-## Customization:-
-
-- Add or edit components in `src/objects.js` to expand the library.
-- Adjust theme colors in `src/styles/theme.css` as needed.
-
-## Accessibility & Keyboard Navigation
-
-This project is designed with accessibility in mind, following [WCAG 2.1](https://www.w3.org/WAI/standards-guidelines/wcag/) and [VGAR](https://usa.visa.com/dam/VCOM/download/corporate-responsibility/visa-global-accessibility-requirements.pdf) standards:
-
-- **Semantic HTML:** All interactive elements use semantic tags (e.g., `<button>`, `<input>`, `<nav>`, `<main>`, `<footer>`).
-- **Keyboard Navigation:**
-  - All features are accessible via keyboard (Tab, Shift+Tab, Enter, Esc).
-  - Modals can be opened/closed with keyboard shortcuts and Esc key.
-  - Focus is trapped within modals when open, and returned to the trigger on close.
-- **ARIA Roles & Attributes:**
-  - Modals use `role="dialog"`, `aria-modal="true"`, and descriptive `aria-label` or `aria-labelledby`.
-  - Buttons and inputs have `aria-label` for screen readers.
-  - Live regions (`aria-live="polite"`) announce dynamic updates (e.g., copy-to-clipboard toast).
-  - Lists and accordions use `aria-expanded`, `aria-controls`, and `role="region"` where appropriate.
-- **Color Contrast:**
-  - All text and UI elements meet or exceed WCAG AA color contrast requirements.
-- **Screen Reader Support:**
-  - All controls and dynamic content are announced to screen readers.
-- **Accessibility Testing:**
-  - Tested with keyboard navigation, screen readers, and automated tools (axe, Lighthouse).
-
-**Example:**
-
-```jsx
-// Accessible modal example
-<div
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="search-modal-title"
-  tabIndex={-1}
->
-  <h3 id="search-modal-title">Search Components</h3>
-  <button aria-label="Close search modal">Close</button>
-</div>
-```
-
-For more details, see code comments referencing specific WCAG and VGAR criteria throughout the codebase.
-
----
+- **Live Preview**: Components are rendered using react-live for interactive previews
+- **Code Copy**: One-click code copying with toast notifications
+- **Search Functionality**: Real-time search through component names and keywords
+- **Theme System**: CSS-based theme switching with light/dark modes
+- **Accessibility**: ARIA attributes, semantic HTML, and keyboard navigation
 
 ## Approach and Technical Choices
 
-- **Framework:** Built with React for component-driven development and fast prototyping.
-- **Component Library:** Utilizes [@visa/nova-react](https://www.npmjs.com/package/@visa/nova-react) for accessible, Visa-compliant UI components.
-- **State Management:** Uses React hooks (`useState`, `useEffect`) for local state and UI logic.
-- **Styling:** Theming and responsive design are handled via CSS variables and custom classes in `theme.css`.
-- **Accessibility:** Follows WCAG and VGAR standards, using semantic HTML, ARIA attributes, and keyboard navigation support throughout.
-- **Code Organization:** Components are modularized for clarity and reusability. The `componentUI` object centralizes all component data and code snippets.
+### Framework Selection
+
+- **React**: Chosen for component-driven development and ecosystem maturity
+- **Vite**: Fast development server and build tool for modern web development
+- **React Router**: Client-side routing for single-page application experience
+
+### Design System Integration
+
+- **@visa/nova-react**: Leverages Visa's official design system for consistency
+- **@visa/nova-styles**: Provides base styling and theme support
+- **@visa/nova-icons-react**: Accessible icon library
+
+### State Management
+
+- **React Hooks**: Local state management using useState and useEffect
+- **URL Parameters**: Component selection and search state managed through routing
+
+### Code Organization
+
+- **Component-based Architecture**: Modular components for reusability
+- **Centralized Data**: All component definitions stored in `objects.js`
+- **Separation of Concerns**: Clear separation between UI, logic, and data
 
 ## Assumptions and Shortcuts
 
-- Assumed that the Nova Design System components are accessible by default, so minimal custom ARIA was added unless needed.
-- The code preview feature only supports simple, self-contained functional components for security and simplicity.
-- Search suggestions and filtering are based on a static list (`componentUI`), not a backend or dynamic data source.
-- Some accessibility features (e.g., focus management in modals/dropdowns) are handled at a basic level and may need further refinement for edge cases.
-- The app is intended as a prototype/demo, not for production use.
+### Security Considerations
 
-## Improvements and Future Work
+- **Code Execution**: Live previews use react-live which executes code in a controlled environment
+- **No Backend**: All data is static and client-side only
+- **Limited Scope**: Only supports simple, self-contained React components
 
-- **Expand Component Library:** Add more components and richer code snippets to the `componentUI` array.
-- **Dynamic Data:** Integrate with a backend or API for real-time component updates and search.
-- **Advanced Accessibility:** Improve keyboard navigation for dropdowns, accordions, and modals (e.g., arrow key support, focus trapping).
-- **Testing:** Add more automated accessibility and unit tests (e.g., with Jest, React Testing Library, axe-core).
-- **Customization:** Allow users to customize themes, save favorites, or export code snippets.
-- **Performance:** Optimize rendering for large component lists and improve lazy loading.
-- **Documentation:** Expand code comments and add more usage examples.
+### Development Assumptions
 
-© 2025 Visa Nova Component Suggester. Built with [@visa/nova-react](https://www.npmjs.com/package/@visa/nova-react).
+- **Design System Compliance**: Assumes Nova components are accessible by default
+- **Browser Support**: Modern browsers with ES6+ support
+- **Static Content**: Component library is predefined and not dynamically loaded
+
+### Accessibility Assumptions
+
+- **Basic ARIA**: Minimal custom ARIA attributes added beyond Nova defaults
+- **Keyboard Navigation**: Basic keyboard support implemented
+- **Focus Management**: Simple focus handling for modals and interactions
+
+## What You Would Improve or Add with More Time
+
+### Enhanced Search & Discovery
+
+- **Advanced Filtering**: Filter by category, complexity, or usage patterns
+- **Fuzzy Search**: Better search algorithms for partial matches
+- **Search History**: Remember recent searches and popular components
+- **Component Tags**: More sophisticated tagging and categorization
+
+### User Experience Improvements
+
+- **Component Favorites**: Allow users to save and organize favorite components
+- **Custom Themes**: User-defined theme customization
+- **Export Options**: Export code snippets in different formats
+- **Component Comparison**: Side-by-side component comparison
+
+### Technical Enhancements
+
+- **Performance Optimization**: Virtual scrolling for large component lists
+- **Caching**: Implement component caching and lazy loading
+- **Analytics**: Track component usage and search patterns
+- **Backend Integration**: Dynamic component library with API support
+
+### Accessibility Improvements
+
+- **Advanced Focus Management**: Better focus trapping and restoration
+- **Screen Reader Optimization**: Enhanced ARIA labels and descriptions
+- **Keyboard Shortcuts**: Comprehensive keyboard navigation support
+- **High Contrast Mode**: Additional accessibility themes
+
+### Development Experience
+
+- **Component Testing**: Automated tests for component functionality
+- **Documentation**: Inline documentation and usage examples
+- **Code Quality**: Enhanced linting and type checking
+- **Build Optimization**: Production build optimization and code splitting
+
+### Content Expansion
+
+- **More Components**: Expand the component library with additional Nova components
+- **Usage Examples**: Real-world usage examples and best practices
+- **Design Guidelines**: Integration with design system documentation
+- **Interactive Tutorials**: Guided tours and learning resources
+
+---
+
+© 2025 Visa Nova Component Suggestion Tool. Built with [@visa/nova-react](https://www.npmjs.com/package/@visa/nova-react).
