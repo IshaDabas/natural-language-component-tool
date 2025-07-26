@@ -166,7 +166,7 @@ I began by identifying common user intents and mapping them to Nova component ca
 
 **ChatGPT** for planning and references.
 **Cursor AI** for testing and debugging
-**Perplexity** for filtering out renderSnipper from codeSnippet in objects.js file
+**Perplexity** for filtering out renderSnippet to live preview the code from codeSnippet in objects.js file
 
 ---
 
