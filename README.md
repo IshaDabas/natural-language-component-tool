@@ -28,7 +28,7 @@ A React-based application for browsing and previewing UI components from the Vis
 - `src/components/Header.jsx`: Application header with theme toggle and search
 - `src/components/ComponentCard.jsx`: Displays component previews and code snippets
 - `src/components/Footer.jsx`: Application footer
-- `src/modals/SearchModal.jsx`: Search modal for finding components
+- `src/Modals/SearchM.jsx`: Search modal for finding components
 
 ### Styling
 

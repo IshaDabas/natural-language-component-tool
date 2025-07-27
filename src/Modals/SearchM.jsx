@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { VisaSearchLow } from "@visa/nova-icons-react";
 import { filterComponents } from "../components/utils";
 
-export default function SearchModal({ visible, onClose }) {
+export default function SearchM({ visible, onClose }) {
   const [search, setSearch] = useState("");
   const nav = useNavigate();
 

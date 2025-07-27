@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "../styles/theme.css";
-import SearchModal from "../Modals/SearchModal";
+
 import { useNavigate } from "react-router-dom";
 import { Typography } from "@visa/nova-react";
+import SearchM from "../Modals/SearchM";
 
-function PageHeader({ title, subtitle }) {
+function PageHeader({ title }) {
   const [theme, setTheme] = useState(() => {
     return document.body.classList.contains("theme-dark") ? "dark" : "light";
   });
@@ -25,7 +26,7 @@ function PageHeader({ title, subtitle }) {
 
   return (
     <>
-      <SearchModal visible={showSearch} onClose={() => setShowSearch(false)} />
+      <SearchM visible={showSearch} onClose={() => setShowSearch(false)} />
 
       <header
         className="header"
