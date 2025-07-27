@@ -10,11 +10,8 @@ export const componentUI = [
       "toggle",
       "boolean input",
       "check box",
-      "form control",
-      "form",
       "responsive",
-      "responsive login form",
-      "responsive login",
+      "login form",
     ],
     category: "Form",
     codeSnippet: `
@@ -53,7 +50,6 @@ export const DefaultCheckbox = () => {
       "A checkbox lets users select one or more options from a set. It's used for toggling preferences.",
     keywords: [
       "checkbox",
-      "form control",
       "toggle",
       "boolean input",
       "check box",
@@ -190,7 +186,6 @@ export const ValidationCheckbox = () => {
       "A checkbox lets users select one or more options from a set. It's used for toggling preferences.",
     keywords: [
       "checkbox",
-      "form control",
       "toggle",
       "boolean input",
       "check box",
@@ -234,13 +229,10 @@ export const DisabledCheckedCheckbox = () => {
     keywords: [
       "button",
       "click",
-      "CTA",
       "submit",
       "trigger",
       "login form",
-      "login",
-      "responsive login form",
-      "responsive login",
+      "responsive",
     ],
     category: "Basic UI",
     codeSnippet: `
@@ -267,13 +259,11 @@ export const DefaultButton = () => {
     keywords: [
       "button",
       "click",
-      "CTA",
       "submit",
       "trigger",
       "login form",
-      "login",
       "responsive login form",
-      "responsive login",
+      "secondary",
     ],
     category: "Basic UI",
     usage: "Used everywhere — forms, modals, navigation, cards, etc.",
@@ -303,12 +293,9 @@ export const SecondaryButton = () => {
       "text",
       "form input",
       "search",
-      "edit text",
+      "edit",
       "login form",
-      "login",
-      "responsive",
       "responsive login form",
-      "responsive login",
     ],
     category: "Form",
     codeSnippet: `
@@ -354,11 +341,9 @@ export const DefaultInput = () => {
       "text",
       "form input",
       "search",
-      "edit text",
+      "edit",
       "error",
-      "responsive",
       "responsive login form",
-      "responsive login",
     ],
     category: "Form",
     codeSnippet: `
@@ -701,14 +686,9 @@ export const ErrorRadio = () => {
       "content",
       "button",
       "subtitles",
+      "header",
       "with headline",
       "with subtitle",
-      "with image",
-      "image header",
-      "image",
-      "image card",
-      "image content card",
-      "image content",
       "responsive",
     ],
     category: "Basic UI",
@@ -803,7 +783,7 @@ import {
   Utility,
 } from '@visa/nova-react';
 
-const BASE_URL = import.meta.env.BASE_URL;
+const Source = 'https://i.imgur.com/0F18uKt.jpeg';
 
 export const ImageHeaderContentCard = () => {
   return (
@@ -812,7 +792,7 @@ export const ImageHeaderContentCard = () => {
         // If your image is NOT decorative, be sure to write alt text describing the image
         alt=""
         // Make sure the src path is correct for your image
-        src={BASE_URL + '/content-card-image.png'}
+        src={Source}
         style={{ blockSize: 'auto', inlineSize: '100%', objectFit: 'contain', overflow: 'hidden' }}
         tag="img"
       />
@@ -834,10 +814,10 @@ export const ImageHeaderContentCard = () => {
 };
     `,
     renderSnippet: `
-<ContentCard style={{inlineSize: '70vw'}}>
+<ContentCard style={{inlineSize: '50vw', boxShadow: "0 0 15px 0 rgba(0, 0, 0, 0.1)" }}>
   <ContentCardImage
     alt="scenery"
-    src="/src/assets/scenery.png"
+    src="https://i.imgur.com/0F18uKt.jpeg"
     style={{ blockSize: 'auto', inlineSize: '100%', objectFit: 'contain', overflow: 'hidden' }}
     tag="img"
   />
@@ -881,7 +861,6 @@ export const ImageHeaderContentCard = () => {
       "login form",
       "login",
       "responsive login form",
-      "responsive login",
       "remember me",
     ],
     category: "Basic UI",
@@ -927,7 +906,6 @@ export const DefaultSwitch = () => {
       "login form",
       "login",
       "responsive login form",
-      "responsive login",
     ],
     category: "Basic UI",
     codeSnippet: `

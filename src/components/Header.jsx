@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/theme.css";
-import SearchModal from "../modals/SearchModal";
+import SearchModal from "../Modals/SearchModal";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "@visa/nova-react";
 

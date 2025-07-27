@@ -1,20 +1,14 @@
 import React, { useState } from "react";
 import "../styles/theme.css";
-import { componentUI } from "../objects";
 import { useNavigate } from "react-router-dom";
 import { VisaSearchLow } from "@visa/nova-icons-react";
+import { filterComponents } from "../components/utils";
 
 export default function SearchModal({ visible, onClose }) {
   const [search, setSearch] = useState("");
   const nav = useNavigate();
 
-  const filtered = componentUI.filter(
-    (c) =>
-      c.name.toLowerCase().includes(search.toLowerCase()) ||
-      (c.keywords || []).some((k) =>
-        k.toLowerCase().includes(search.toLowerCase())
-      )
-  );
+  const filtered = filterComponents(search);
 
   return (
     visible && (
