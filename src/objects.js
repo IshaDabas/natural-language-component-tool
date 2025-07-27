@@ -882,6 +882,7 @@ export const ImageHeaderContentCard = () => {
       "login",
       "responsive login form",
       "responsive login",
+      "remember me",
     ],
     category: "Basic UI",
     codeSnippet: `
