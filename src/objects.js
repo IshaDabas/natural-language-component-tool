@@ -13,6 +13,8 @@ export const componentUI = [
       "form control",
       "form",
       "responsive",
+      "responsive login form",
+      "responsive login",
     ],
     category: "Form",
     codeSnippet: `
@@ -237,6 +239,8 @@ export const DisabledCheckedCheckbox = () => {
       "trigger",
       "login form",
       "login",
+      "responsive login form",
+      "responsive login",
     ],
     category: "Basic UI",
     codeSnippet: `
@@ -268,6 +272,8 @@ export const DefaultButton = () => {
       "trigger",
       "login form",
       "login",
+      "responsive login form",
+      "responsive login",
     ],
     category: "Basic UI",
     usage: "Used everywhere — forms, modals, navigation, cards, etc.",
@@ -301,6 +307,8 @@ export const SecondaryButton = () => {
       "login form",
       "login",
       "responsive",
+      "responsive login form",
+      "responsive login",
     ],
     category: "Form",
     codeSnippet: `
@@ -349,6 +357,8 @@ export const DefaultInput = () => {
       "edit text",
       "error",
       "responsive",
+      "responsive login form",
+      "responsive login",
     ],
     category: "Form",
     codeSnippet: `
@@ -870,6 +880,8 @@ export const ImageHeaderContentCard = () => {
       "responsive",
       "login form",
       "login",
+      "responsive login form",
+      "responsive login",
     ],
     category: "Basic UI",
     codeSnippet: `
@@ -913,6 +925,8 @@ export const DefaultSwitch = () => {
       "responsive",
       "login form",
       "login",
+      "responsive login form",
+      "responsive login",
     ],
     category: "Basic UI",
     codeSnippet: `
