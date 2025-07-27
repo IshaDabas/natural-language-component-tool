@@ -229,7 +229,15 @@ export const DisabledCheckedCheckbox = () => {
     name: "Primary-Button",
     description:
       "A Button is a trigger for actions such as submitting a form, opening a modal, or navigating to another page.",
-    keywords: ["button", "click", "CTA", "submit", "trigger"],
+    keywords: [
+      "button",
+      "click",
+      "CTA",
+      "submit",
+      "trigger",
+      "login form",
+      "login",
+    ],
     category: "Basic UI",
     codeSnippet: `
 import { Button } from '@visa/nova-react';
@@ -252,7 +260,15 @@ export const DefaultButton = () => {
     name: "Secondary-Button",
     description:
       "A Button is a trigger for actions such as submitting a form, opening a modal, or navigating to another page.",
-    keywords: ["button", "click", "CTA", "submit", "trigger"],
+    keywords: [
+      "button",
+      "click",
+      "CTA",
+      "submit",
+      "trigger",
+      "login form",
+      "login",
+    ],
     category: "Basic UI",
     usage: "Used everywhere — forms, modals, navigation, cards, etc.",
     codeSnippet: `
@@ -276,7 +292,16 @@ export const SecondaryButton = () => {
     name: "Text Input",
     description:
       "A Text Input allows users to enter text. It's commonly used in forms, search bars, and filters.",
-    keywords: ["input", "text", "form input", "search", "edit text"],
+    keywords: [
+      "input",
+      "text",
+      "form input",
+      "search",
+      "edit text",
+      "login form",
+      "login",
+      "responsive",
+    ],
     category: "Form",
     codeSnippet: `
 import { Input, InputContainer, Label, Utility } from '@visa/nova-react';
@@ -843,6 +868,8 @@ export const ImageHeaderContentCard = () => {
       "signin",
       "signout",
       "responsive",
+      "login form",
+      "login",
     ],
     category: "Basic UI",
     codeSnippet: `
@@ -884,6 +911,8 @@ export const DefaultSwitch = () => {
       "single-line input",
       "single-line input field",
       "responsive",
+      "login form",
+      "login",
     ],
     category: "Basic UI",
     codeSnippet: `
